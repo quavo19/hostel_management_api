@@ -15,9 +15,10 @@ class DuesController < ApplicationController
       if @due.save
         render json: @due, status: :created
       else
-        render json: @due.errors, status: :unprocessable_entity
+        render json: { errors: @due.errors.full_messages }, status: :unprocessable_entity
       end
     end
+    
   
     private
     def due_params
