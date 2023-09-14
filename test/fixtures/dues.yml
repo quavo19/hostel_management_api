@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student: one
+  amount_paid: 9.99
+  year: 1
+
+two:
+  student: two
+  amount_paid: 9.99
+  year: 1

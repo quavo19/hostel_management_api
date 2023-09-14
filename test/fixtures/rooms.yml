@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  room_number: 1
+  fan: false
+  door: false
+  door_lock: false
+  bulb: false
+  switch_and_socket: false
+  fan_regulator: false
+  bed: false
+
+two:
+  room_number: 1
+  fan: false
+  door: false
+  door_lock: false
+  bulb: false
+  switch_and_socket: false
+  fan_regulator: false
+  bed: false
