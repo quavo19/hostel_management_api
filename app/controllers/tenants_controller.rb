@@ -9,6 +9,22 @@ class TenantsController < ApplicationController
       @tenant = Tenant.find(params[:id])
       render json: @tenant
     end
+
+    def edit
+      @tenant = Tenant.find(params[:id])
+      render json: @tenant
+    end
+    
+    # This action updates the tenant details
+    def update
+      @tenant = Tenant.find(params[:id])
+      
+      if @tenant.update(tenant_params)
+        render json: { message: 'Tenant successfully updated', tenant: @tenant }, status: :ok
+      else
+        render json: { error: 'Failed to update tenant', errors: @tenant.errors.full_messages }, status: :unprocessable_entity
+      end
+    end
   
     def create
         room = Room.find_by(id: params[:tenant][:room_id])
@@ -24,6 +40,15 @@ class TenantsController < ApplicationController
           render json: @tenant, status: :created
         else
           render json: { errors: @tenant.errors.full_messages }, status: :unprocessable_entity
+        end
+      end
+      def destroy
+        @tenant = Tenant.find(params[:id])
+        
+        if @tenant.destroy
+          render json: { message: 'Tenant successfully deleted' }, status: :ok
+        else
+          render json: { error: 'Failed to delete tenant' }, status: :unprocessable_entity
         end
       end
 
