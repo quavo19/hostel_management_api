@@ -6,6 +6,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave'
 gem 'mini_magick' # For image processing
 gem 'jwt'
+gem 'rack-cors'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.7", ">= 7.0.7.2"
